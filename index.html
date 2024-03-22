@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta online</title>
+    <style>
+        /* Estilos para el contenedor de la imagen */
+        #imagen-container {
+            width: 606px;
+            height: 608px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        /* Estilos para la imagen */
+        #imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Receta Online</h1>
+    <div id="imagen-container">
+        <img id="imagen" src="" alt="Imagen al azar">
+    </div>
+
+    <script>
+        // Array de URLs de imágenes (puedes agregar más)
+        const imagenes = [
+            '1.png',
+            '2.png',
+            '3.png',
+            '4.png',
+            '5.png',
+            '6.png',
+            '7.png',
+            '8.png',
+            '9.png',
+            '10.png',
+            '11.png',
+            '12.png',
+            
+        ];
+
+        // Función para obtener una imagen al azar
+        function obtenerImagenAlAzar() {
+            const indice = Math.floor(Math.random() * imagenes.length);
+            return imagenes[indice];
+        }
+
+        // Cargar una imagen al azar al cargar la página
+        window.addEventListener('load', () => {
+            const imagen = document.getElementById('imagen');
+            imagen.src = obtenerImagenAlAzar();
+        });
+
+        // Cambiar la imagen al hacer clic en ella
+        const imagenContainer = document.getElementById('imagen-container');
+        imagenContainer.addEventListener('click', () => {
+            const imagen = document.getElementById('imagen');
+            imagen.src = obtenerImagenAlAzar();
+        });
+    </script>
+</body>
+</html>
